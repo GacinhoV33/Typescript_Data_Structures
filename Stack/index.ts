@@ -50,6 +50,20 @@ export class Stack{
             return undefined;
        }
     }
+
+    isItemIn(item: any): boolean{
+        if(this._data && this._data.length > 0){
+            let stackCopy: any[] = this._data;
+            while(stackCopy?.length > 0){
+                if(stack.pop() === item){
+                    return true;
+                }
+            }
+        }else{
+            throw new Error("Stack is empty")
+        }
+        return false;
+    }
 }
 
 
